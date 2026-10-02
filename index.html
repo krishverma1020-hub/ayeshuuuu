@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>A Special Question For You 💖</title>
+  <meta name="description" content="A special, romantic message created just for you.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Animated Canvases -->
+  <canvas id="hearts-canvas"></canvas>
+  <canvas id="confetti-canvas"></canvas>
+  <canvas id="sparkle-canvas"></canvas>
+
+  <!-- Floating Ambient Stickers -->
+  <div class="floating-sticker sticker-1">🌸</div>
+  <div class="floating-sticker sticker-2">🎀</div>
+  <div class="floating-sticker sticker-3">✨</div>
+  <div class="floating-sticker sticker-4">🍓</div>
+  <div class="floating-sticker sticker-5">💫</div>
+  <div class="floating-sticker sticker-6">🧁</div>
+
+  <!-- Top Floating Controls -->
+  <div class="top-controls">
+    <button id="theme-cycle-btn" class="icon-btn" title="Change Color Theme" aria-label="Change Color Theme">
+      🎨
+    </button>
+    <button id="music-toggle-btn" class="icon-btn" title="Toggle Romantic Music" aria-label="Toggle Romantic Music">
+      🎵
+      <div id="music-waves" class="music-waves" style="display: none;">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+    <button id="customize-btn" class="icon-btn" title="Personalize Names" aria-label="Personalize Names">
+      ⚙️
+    </button>
+  </div>
+
+  <!-- INTRO SCREEN: WAX SEAL ENVELOPE OPENER -->
+  <div id="intro-screen" class="intro-screen">
+    <div class="envelope-wrapper">
+      <div id="envelope" class="envelope">
+        <div class="envelope-flap"></div>
+        <div id="wax-seal" class="wax-seal" title="Click to break seal">❤️</div>
+        <div class="envelope-pocket"></div>
+        <div class="envelope-letter">
+          <div class="letter-stamp">💌</div>
+          <h3 class="letter-title">For <span class="dyn-her-name">My Love</span></h3>
+          <p class="letter-subtitle">A letter straight from the heart</p>
+        </div>
+      </div>
+    </div>
+    <div class="intro-instruction">
+      You've received a love letter...
+      <span>Tap the wax seal to open 💌</span>
+    </div>
+  </div>
+
+  <!-- MAIN PROPOSAL JOURNEY -->
+  <main class="wrapper">
+
+    <!-- Hero Header -->
+    <header class="hero-header">
+      <div class="special-badge">
+        ✨ A Special Message For You ✨
+      </div>
+      <h1 class="hero-title">
+        Dearest <span class="her-name-highlight dyn-her-name">My Love</span>,
+      </h1>
+      <p class="hero-subtitle">
+        Ever since you came into my life, every single day has been brighter, sweeter, and infinitely more beautiful.
+      </p>
+    </header>
+
+    <!-- SECTION: OUR PRECIOUS MEMORIES -->
+    <section class="section-block">
+      <div class="section-heading">
+        <span class="section-tag">Cherished Moments</span>
+        <h2 class="section-title">Our Story Together</h2>
+      </div>
+      <div id="memories-container" class="memories-grid">
+        <!-- Dynamic Polaroid Cards rendered from config.js -->
+      </div>
+    </section>
+
+    <!-- SECTION: REASONS WHY I LOVE YOU -->
+    <section class="section-block">
+      <div class="section-heading">
+        <span class="section-tag">From The Heart</span>
+        <h2 class="section-title">Reasons You Make My Heart Melt</h2>
+      </div>
+      <div id="reasons-container" class="reasons-grid">
+        <!-- Dynamic Reason Cards rendered from config.js -->
+      </div>
+    </section>
+
+    <!-- SECTION: THE BIG QUESTION BOX -->
+    <section class="proposal-box-wrapper">
+      <div class="proposal-box">
+        <div class="cute-mascot">🧸💕</div>
+        <h2 id="dyn-question-title" class="question-heading">
+          Will you be my girlfriend, <span class="dyn-her-name">My Love</span>?
+        </h2>
+        <p id="dyn-question-subtitle" class="question-text">
+          I want to hold your hand through everything, share every laugh, and call you mine. What do you say?
+        </p>
+
+        <!-- Interactive Button Zone -->
+        <div class="answer-zone">
+          <button id="btn-yes" class="btn-yes">
+            YES! 💖
+          </button>
+          <button id="btn-no" class="btn-no">
+            No 🥺
+          </button>
+          <div id="tease-toast" class="tease-toast"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Romantic Footer -->
+    <footer class="romantic-footer">
+      <p>Made with endless love for <strong class="dyn-her-name">My Love</strong> by <strong class="dyn-your-name">Yours Forever</strong> 💖</p>
+    </footer>
+
+  </main>
+
+  <!-- CELEBRATION MODAL -->
+  <div id="celebration-modal" class="modal-overlay">
+    <div class="celebration-card">
+      <button id="close-modal-btn" class="btn-close-modal" aria-label="Close celebration modal">✕</button>
+      <div class="celebration-badge">🎉💍💖</div>
+      <h2 class="celebration-title">SHE SAID YES!</h2>
+      <h3 class="celebration-subtitle">Officially The Happiest Person in the World!</h3>
+      <p class="celebration-desc">
+        Thank you for choosing me! I promise to make every day special, love you unconditionally, give you endless cuddles, and make you smile whenever you need it most.
+      </p>
+
+      <!-- Romantic Certificate Frame -->
+      <div class="certificate-frame">
+        <div class="cert-header">Official Certificate of Love</div>
+        <div class="cert-title">Best Girlfriend Award</div>
+        <div class="cert-names">
+          Presented to <span class="dyn-her-name">My Love</span> & <span class="dyn-your-name">Yours Forever</span>
+        </div>
+        <div class="cert-details">
+          Officially partners in crime, love, and endless happiness.
+        </div>
+        <div class="cert-details" style="margin-top: 6px;">
+          Certified on: <strong id="cert-date">Today</strong>
+        </div>
+        <div class="cert-seal">🏅✨</div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="celebration-actions">
+        <a id="whatsapp-share-link" class="action-btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          Text Him the Good News! 💌
+        </a>
+        <button id="print-cert-btn" class="action-btn btn-print">
+          Save / Print Certificate 📜
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERSONALIZATION & THEME DRAWER -->
+  <div id="customizer-drawer" class="customizer-drawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Personalize & Themes 💖</h3>
+      <button id="close-drawer-btn" class="btn-close-modal" aria-label="Close settings drawer">✕</button>
+    </div>
+
+    <!-- Color Theme Selector -->
+    <div class="form-group">
+      <label class="form-label">Color Themes 🎨</label>
+      <div class="theme-selector-grid">
+        <button class="theme-pill-btn active" data-theme="default">🌸 Rose Petal</button>
+        <button class="theme-pill-btn" data-theme="theme-lavender">💜 Lavender</button>
+        <button class="theme-pill-btn" data-theme="theme-peach">🍑 Sunset Peach</button>
+        <button class="theme-pill-btn" data-theme="theme-candy">🍬 Cotton Candy</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="input-her-name" class="form-label">Her Name / Nickname</label>
+      <input type="text" id="input-her-name" class="form-input" placeholder="e.g. Sophia, Cutie">
+    </div>
+
+    <div class="form-group">
+      <label for="input-your-name" class="form-label">Your Name</label>
+      <input type="text" id="input-your-name" class="form-input" placeholder="e.g. Alex, David">
+    </div>
+
+    <button id="save-config-btn" class="btn-save-config">
+      Apply to Page ✨
+    </button>
+
+    <button id="copy-link-btn" class="btn-copy-link">
+      Copy Shareable Link 🔗
+    </button>
+
+    <div style="margin-top: 20px; font-size: 0.85rem; color: #8c5d6c; line-height: 1.5;">
+      💡 <strong>Pro Tip:</strong> When you click <em>"Copy Shareable Link"</em>, her name and selected color theme are encoded into the web link, so whenever she opens the link on her phone, it will automatically show up in her favorite theme!
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
